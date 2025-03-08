@@ -1,58 +1,62 @@
-# AWS-Assets-Finder
-Description
+'''
+    ___    _    _    _      _   _  ____ ___ _   _ _____ ____  
+   / \ \  / \  | |  | |    | \ | |/ ___|_ _| \ | | ____|  _ \
+  / _ \ \/ _ \ | |  | |    |  \| | |  _ | ||  \| |  _| | |_) |
+ / ___ \  ___ \| |__| |___ | |\  | |_| || || |\  | |___|  _ <
+/_/   \_\_/   \_\____|_____|_| \_|\____|___|_| \_|_____|_| \_\
+'''
+# AWS Assets Finder - A Hacker's Recon Tool
+### "Uncover. Exploit. Secure."
 
-AWS Assets Finder is a Python tool that automates the enumeration of various AWS-related assets, including subdomains, S3 buckets, CloudFront distributions, EC2 instances, RDS databases, and IAM users. It leverages multiple tools to gather information efficiently.
+## Overview
+AWS Assets Finder is a **powerful reconnaissance tool** designed to automate the **discovery of AWS cloud assets**. Whether you're a security researcher, penetration tester, or red team operator, this tool helps you uncover:
 
-Features
+- 🕵️ **Subdomains** (via Amass, Subfinder, Assetfinder)
+- ☁️ **S3 Buckets** (via S3Scanner, AWS CLI)
+- 🚀 **CloudFront Distributions** (via crt.sh, dig)
+- 🔥 **EC2 Instances** (via Shodan, Censys)
+- 🗄️ **RDS Databases** (via Nmap, Cloudbrute)
+- 👤 **IAM Users** (via Enumerate-IAM, AWS CLI)
 
-Subdomain Enumeration using Amass, Subfinder, and Assetfinder
+It uses **multithreading** to speed up scans and automatically saves results for later analysis.
 
-S3 Bucket Enumeration using S3Scanner and AWS CLI
+---
+## 🛠️ Installation & Dependencies
+### 📌 Prerequisites
+Ensure you have the following installed on your system:
 
-CloudFront Distribution Lookup using crt.sh and dig
+- **Python 3.x**
+- `amass`, `subfinder`, `assetfinder`
+- `s3scanner`, `aws-cli`
+- `jq`, `dig`
+- `shodan`, `censys`
+- `nmap`, `cloudbrute`
+- `enumerate-iam`
 
-EC2 Instance Scanning using Shodan and Censys
-
-RDS Database Discovery using Nmap and Cloudbrute
-
-IAM User Enumeration using Enumerate-IAM and AWS CLI
-
-Multithreading for Faster Execution
-
-Automatic Result Saving
-
-Installation
-
-Prerequisites
-
-Ensure you have the following tools installed:
-
-Python 3.x
-
-amass, subfinder, assetfinder
-
-s3scanner, aws-cli
-
-jq, dig
-
-shodan, censys
-
-nmap, cloudbrute
-
-enumerate-iam
-
-Install dependencies if required:
-
+📥 **Install Python dependencies:**
+```bash
 pip install shodan censys
+```
 
-Usage
-
-Run the script using Python:
-
+---
+## 🎯 Usage
+💀 Fire up the scanner:
+```bash
 python aws_enum.py
+```
+Enter the **target domain** when prompted, and let the tool do the work! 🕶️
 
-Enter the target domain when prompted.
+---
+## 📜 Output
+- The results will be saved in a file named:
+```plaintext
+aws_enum_<domain>.txt
+```
+- Example results include **subdomains, S3 bucket URLs, EC2 IPs, CloudFront mappings**, and more.
 
-Output
+---
+## ⚠️ Legal Disclaimer
+**This tool is for authorized security testing and educational purposes only.** Unauthorized usage against systems **without explicit permission** is illegal and punishable under cybersecurity laws. **Use responsibly.**
 
-Results will be saved in a file named aws_enum_<domain>.txt.
+👨‍💻 **Author:** r4x4nj031 | 🚀 Happy Hacking!
+
